@@ -1,0 +1,60 @@
+
+{% load static %}
+{%block title%}
+<!--Login-->
+{% endblock %}
+{% block content %}
+
+<body>
+
+<div style="background:url('{% static 'img/tree-736885__340.jpg' %}');background-repeat:no-repeat;
+  background-attachment:fixed;background-size:cover;height:100%;">
+<!--    <div style="background-color:violet;background-size:cover;height:100%;">-->
+<div class="container login-container" style="padding-left:500px;padding-right:550px; padding-top:99px;margin-bottom: 5%;">
+            <div class="row">
+                <div class="col-md-6 login-form-1" style="padding:5%;box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);background-color:white;">
+
+                    <h3 style="text-align: center;color: #333;">Login</h3>
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <div class="form-group" style="">
+                            <input type="text" class="form-control" style="font-size: 20px;font-weight: lighter;border: none;
+	                             background-color: #F0F0F0;color: #465347!important;padding: 26px 57px;
+	                          border-radius: 30px;transition : 0.2s;"  placeholder="Your Name *" name="username" />
+                        </div>
+                        <div class="form-group" style="width: 50%;border-radius: 1rem;padding:2.5%;border: none; cursor: pointer;">
+                            <input type="password" class="form-control" style="font-size: 20px;font-weight:lighter;border: none;
+                            background-color: #F0F0F0;color: #465347!important;padding: 26px 55px;border-radius:30px;
+                            transition : 0.2s;" placeholder="Your Password *" name="password" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" style=" width: 30%;border-radius: 1rem; padding: 1.5%;border:none;
+                            cursor: pointer;  font-weight: 600;color:#fff;background-color: #0062cc;" value="Login" />
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+<!--                            <a href="#" class="ForgetPwd">Forget Password?</a>-->
+<!--                        </div>-->
+<!--                        <div class="form-group">-->
+                       <a href="{% url 'register' %}" style="padding-left:100px;">Register</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+<!--         <a href="{% url 'register' %}" >Register</a>-->
+</div>
+</div>
+</body>
+ {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

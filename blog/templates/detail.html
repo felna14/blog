@@ -1,0 +1,31 @@
+{% load static %}
+{% block body %}
+<head>
+     <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+</head>
+
+<div style="background-image:url('{% static 'img/cement-floor.jpg' %}');background-attachment:fixed;background-size:cover;height:100%;">
+<div class="container">
+    <div class="row">
+            {% if item %}
+
+  <img src="{{item.image.url}}"  style="height:220px;width:375px;padding-top:45px;padding-left:13%;">
+    <h2 style= "color: #000000;font-weight: 700;font-size: 24px;margin-left:10%;margin:240px 200px 5px -220px;">{{item.name}}</h2>
+
+    <div style="font-family: 'Catamaran', sans-serif;line-height: 1.80857;font-size: 16px;margin-bottom:20px;margin:30px 200px 15px 150px;text-align:justify;">
+    <p>{{item.desc}}</p>
+
+        <a href="{% url 'update' item.id %}" class="btn btn-warning">UPDATE</a>
+      <a href="{% url 'delete' item.id %}" class="btn btn-danger">DELETE</a>
+
+  </div>
+
+<!--</div>-->
+            {% endif %}
+            </div>
+
+    </div>
+</div>
+{% endblock %}
+
+

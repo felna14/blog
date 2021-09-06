@@ -1,0 +1,19 @@
+{% load static %}
+<! DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+   <div style="background-image:url('{% static 'img/cement-floor.jpg' %}');background-attachment:fixed;background-size:cover;height:100%;">
+    <form method="post">
+       {% csrf_token %}
+    <div style="font-family:'Catamaran', sans-serif;line-height: 1.80857;font-size: 16px;padding-left:35%;padding-top:5%;">
+        Are you sure you want to delete ?
+    <input style="background-color:green;border:none;height:3.5%;" type="submit">
+    </div>
+</form>
+   </div>
+</body>
+</html>

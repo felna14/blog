@@ -1,0 +1,52 @@
+{% load static %}
+{% block content %}
+<body>
+<div style="background-image:url('{% static 'img/old.webp' %}');background-attachment:fixed;background-size:cover;height:100%;">
+<!--      <div style="background-color:violet;background-size:cover;height:100%;">-->
+   <div class="container login-container" style="padding-left:425px;padding-right:450px; padding-top:99px;margin-bottom: 5%;">
+            <div class="row">
+               <center><div class="col-md-6 login-form-1" style="padding:5%; box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);margin-left:130px;background-color:white;">
+                    <h3 style="text-align: center;color: #333;">Looks like you're new here!</h3>
+                    <form action="register" method="post" style="">
+						  {% csrf_token %}
+
+                  	<div class="form-group">
+                       <input type="text" style="font-size: 20px;font-weight: lighter;border: none;
+	                             background-color: #F0F0F0;color: #465347!important;padding: 26px 65px;"name="username" class="form-control input-sm" placeholder="Name">
+                        	</div>
+                        <div class="form-group" style="padding:2.5%;padding-left:1%;">
+                             <input type="email" style="font-size: 20px;font-weight:lighter;border: none;
+                            background-color: #F0F0F0;color: #465347!important;padding: 26px 65px;" name="email"  class="form-control input-sm" placeholder="Email Address">
+                        </div>
+
+						<div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                               <div class="form-group">
+                               <input type="password" style="font-size: 20px;font-weight:lighter;border: none;
+                            background-color: #F0F0F0;color: #465347!important;padding: 26px 65px;" name="password"  class="form-control input-sm" placeholder="Password">
+                             </div>
+                            </div>
+							<div class="col-xs-6 col-sm-6 col-md-6">
+                            <div class="form-group" style="padding:2.5%;padding-left:1%;">
+                                <input type="password"style="font-size: 20px;font-weight:lighter;border: none;
+                            background-color: #F0F0F0;color: #465347!important;padding: 26px 65px;" name="password1" class="form-control input-sm" placeholder="Confirm Password">
+                             </div>
+                         </div>
+                    </div>
+						 <div clss="form-group">
+                            <input type="submit" style=" width: 30%; padding: 1.5%;border:none;
+                            cursor: pointer;  font-weight: 600;color:#fff;background-color: #0062cc;" class="btn btn-info btn-block" value="Register" />
+                        </div>
+
+					</form>
+               </div></center>
+            </div>
+</div>
+<div class="row justify-content-center">
+    {% for message in messages %}
+    <h4 style="margin-top:5px; margin-bottom:50px;color:red;text-align:center;">{{message}}</h4>
+    {% endfor %}
+</div>
+</div>
+</body>
+ {% endblock %}
